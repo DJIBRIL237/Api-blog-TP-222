@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 const Port = process.env.Port || 3000;
-const MONGOO_URI = process.env.MONGOO_URI || "mongodb://127.0.0.1:27017/blog";
+const MONGO_URI = process.env.MONGOO_URI || "mongodb://127.0.0.1:27017/blog";
 app.use(express.json());
 
 const swaggerUi = require("swagger-ui-express");
@@ -17,7 +17,13 @@ const swaggerOptions = {
       version: "1.0.0",
       description: "Documentation",
     },
-    servers: [{ url: process.env.RAILWAY_PUBLIC_DOMAIN?`https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : `http://localhost:${Port}` }],
+    servers: [
+      {
+        url: process.env.RAILWAY_PUBLIC_DOMAIN
+          ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
+          : `http://localhost:${Port}`,
+      },
+    ],
   },
   apis: ["./routes/articleRoutes.js"],
 };
@@ -30,7 +36,7 @@ const articleRoutes = require("./routes/articleRoutes");
 app.use("/api", articleRoutes);
 
 mongoose
-  .connect(MONGOO_URI)
+  .connect(MONGO_URI)
   .then(() => console.log("connexion a Mongo reussie"))
   .catch((err) => console.error("Ereur de connexion a Mongodb :", err));
 
