@@ -40,6 +40,15 @@ Le dépôt est organisé pour séparer strictement l'environnement de développe
 
 ---
 
+---
+
+## Déploiement (Branche deploy) 
+L'API est déployée et accessible publiquement.
+* **URL de l'API** : api-blog-tp-222-production.up.railway.app
+* Documentation Swagger** : `api-blog-tp-222-production.up.railway.app/api-docs` 
+
+---
+
 ##  Documentation de l'API (Endpoints) 
 
 Chaque article géré par l'API contient : titre, contenu, auteur, date, catégorie et tags].
@@ -60,14 +69,7 @@ Chaque article géré par l'API contient : titre, contenu, auteur, date, catégo
 * **404 Not Found** : L'article demandé n'existe pas.
 * **500 Internal Server Error** : Erreur serveur.
 
----
 
-## Déploiement (Branche deploy) 
-L'API est déployée et accessible publiquement.
-* **URL de l'API** : api-blog-tp-222-production.up.railway.app
-* Documentation Swagger** : `api-blog-tp-222-production.up.railway.app/api-docs` 
-
----
 
 ##  Auteur 
 * **Nom** : EMABOU DJIBRIL
