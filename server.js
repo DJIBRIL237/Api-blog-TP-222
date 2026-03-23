@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 const Port = process.env.Port || 3000;
-const MONGO_URI = process.env.MONGOO_URI || "mongodb://127.0.0.1:27017/blog";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/blog";
 app.use(express.json());
 
 const swaggerUi = require("swagger-ui-express");
